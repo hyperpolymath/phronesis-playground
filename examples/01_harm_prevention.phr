@@ -1,0 +1,33 @@
+-- SPDX-License-Identifier: AGPL-3.0-or-later
+-- Phronesis Ethics Specification Example
+
+-- Define ethical constraints
+ethics HarmPrevention:
+    rule no_harm:
+        forall action in Actions:
+            not causes_harm(action, any Human)
+
+    rule informed_consent:
+        forall data_use in DataOperations:
+            requires consent(data_use.subject)
+
+-- Safety properties for AI behavior
+safety AIBehavior:
+    invariant bounded_action:
+        -- AI actions stay within defined bounds
+        forall action: action.impact <= max_allowed_impact
+
+    invariant human_oversight:
+        -- Critical decisions require human approval
+        forall decision where critical(decision):
+            requires human_approval(decision)
+
+-- Value specifications
+values HumanCentric:
+    priority: [privacy, autonomy, wellbeing, fairness]
+
+    define privacy:
+        -- Formal definition of privacy requirements
+        minimize data_collection
+        enforce data_minimization
+        require purpose_limitation
