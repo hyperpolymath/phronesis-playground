@@ -10,7 +10,17 @@
           (date . "2025-12-30")
           (context . "Need formal specification language for AI ethics")
           (decision . "Create DSL for ethical constraints and safety properties")
-          (consequences . "Machine-readable ethics and auditable AI decisions")))))
+          (consequences . "Machine-readable ethics and auditable AI decisions")))
+       (adr-002
+         ((status . "accepted")
+          (date . "2025-12-30")
+          (title . "Hyperpolymath Language Policy")
+          (context . "Consistent language stack across all repositories")
+          (decision . "Use ReScript (not TypeScript), Deno (not npm/Node), Rust (not Go/Python)")
+          (consequences . ("Type safety via ReScript"
+                           "No npm dependencies"
+                           "Performance via Rust"
+                           "Python only for SaltStack"))))))
     (development-practices
       ((code-style . "rust-standard")
        (security . "openssf-scorecard")
