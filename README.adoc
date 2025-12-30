@@ -1,0 +1,89 @@
+= Phronesis Playground
+:toc: macro
+:icons: font
+
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+image:https://img.shields.io/badge/Language-Phronesis-purple[Phronesis]
+image:https://img.shields.io/badge/Focus-AI%20Ethics-green[AI Ethics]
+image:https://img.shields.io/badge/License-AGPL--3.0-blue[License]
+
+*Playground for Phronesis - AI Ethics and Safety Specification Language*
+
+toc::[]
+
+== Overview
+
+Phronesis (Greek: φρόνησις, "practical wisdom") is a specification language for AI ethics, safety constraints, and value alignment.
+
+=== Key Features
+
+* **Ethical Constraints**: Formal specification of ethical rules
+* **Safety Properties**: Provable safety guarantees
+* **Value Alignment**: Express human values formally
+* **Audit Trails**: Track ethical decision-making
+
+== Language Design
+
+=== Ethical Rules
+
+[source,phronesis]
+----
+-- Define ethical constraints
+ethics HarmPrevention:
+    rule no_harm:
+        forall action in Actions:
+            not causes_harm(action, any Human)
+
+    rule informed_consent:
+        forall data_use in DataOperations:
+            requires consent(data_use.subject)
+----
+
+=== Safety Properties
+
+[source,phronesis]
+----
+safety AIBehavior:
+    invariant bounded_action:
+        -- AI actions stay within defined bounds
+        forall action: action.impact <= max_allowed_impact
+
+    invariant human_oversight:
+        -- Critical decisions require human approval
+        forall decision where critical(decision):
+            requires human_approval(decision)
+----
+
+=== Value Specifications
+
+[source,phronesis]
+----
+values HumanCentric:
+    priority: [privacy, autonomy, wellbeing, fairness]
+
+    define privacy:
+        -- Formal definition of privacy requirements
+        minimize data_collection
+        enforce data_minimization
+        require purpose_limitation
+----
+
+== Getting Started
+
+[source,bash]
+----
+guix install phronesis
+phronesis check ethics.phr
+phronesis verify safety.phr
+----
+
+== Examples
+
+* `ethics/` - Ethical constraint specifications
+* `safety/` - Safety property definitions
+* `alignment/` - Value alignment examples
+
+== License
+
+SPDX-License-Identifier: AGPL-3.0-or-later
