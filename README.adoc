@@ -7,7 +7,7 @@ image:https://img.shields.io/badge/Philosophy-Palimpsest-purple.svg[Palimpsest,l
 :toc: macro
 :icons: font
 
-// SPDX-License-Identifier: AGPL-3.0-or-later
+// SPDX-License-Identifier: PMPL-1.0-or-later
 
 image:https://img.shields.io/badge/Language-Phronesis-purple[Phronesis]
 image:https://img.shields.io/badge/Focus-AI%20Ethics-green[AI Ethics]
@@ -90,4 +90,4 @@ phronesis verify safety.phr
 
 == License
 
-SPDX-License-Identifier: AGPL-3.0-or-later
+SPDX-License-Identifier: PMPL-1.0-or-later
